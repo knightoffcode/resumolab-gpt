@@ -1,0 +1,54 @@
+// Colors
+$background-white: #FFFFFF;
+$secondary-color: #2ecc71;
+$highlight-color: #e74c3c;
+$background-color: #FBF8F8;
+$highlight-color: #6E00FF;
+
+$background-white: #FFFFFF;
+
+$font-white: #FFFFFF;
+$font-black: #000000;
+$border-gray: #CCCCCC;
+$border-black: #000000;
+$button-green: rgb(77, 230, 77);
+$background-green: rgb(77, 230, 77);
+
+// Fonts
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+
+// Font Size
+$default-font-size: 1rem;
+
+// Spacing
+$default-spacing: 1rem;
+$small-spacing: 5px;
+$large-spacing: 2rem;
+
+// Border
+$border-radius: 4px;
+
+// Max Width of Content
+$max-width: 1200px;
+
+// Transitions
+$default-transition: 0.3s ease-in-out;
+
+// Z-index
+$default-z-index: 1000;
+
+// Padding
+$default-padding: 1rem;
+$large-padding: 20px;
+$small-padding: 5px;
+
+// Inner Padding (spacing inside elements)
+$inner-padding-default: 15px;
+$inner-padding-large: 30px;
+$inner-padding-small: 10px;
+
+// Outer Padding (spacing outside elements)
+$outer-padding-default: 15px;
+$outer-padding-large: 30px;
+$outer-padding-small: 10px;

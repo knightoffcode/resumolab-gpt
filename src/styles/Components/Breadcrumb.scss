@@ -1,0 +1,15 @@
+.breadcrumb {
+  display: flex;
+  padding: 0 0 16px;
+
+  li {
+    margin-right: 16px;
+    position: relative;
+    font-size: 0.8rem;
+
+    &:last-child {
+      padding-bottom: 3px;
+      border-bottom: 1px solid red;
+    }
+  }
+}

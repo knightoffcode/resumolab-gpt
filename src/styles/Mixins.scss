@@ -1,0 +1,40 @@
+// Container
+@mixin container($max-width: 1200px, $margin: 0 auto, $padding: 0, $is-flex: false, $is-wrap: false) {
+    max-width: $max-width;
+    margin: $margin;
+    padding: $padding;
+
+    @if $is-flex {
+        display: flex;
+
+        @if $is-wrap {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+// Button
+@mixin button($background-color, $text-color: $font-white, $padding) {
+    all: unset;
+    display: inline-block;
+    font-size: $default-font-size;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+
+    background-color: $background-color;
+    color: $text-color;
+    padding: $padding;
+  
+    &:hover {
+        background-color: darken($background-color, 10%);
+    }
+}
+
+// Product sections container
+@mixin product-sections-container($background-color: #fff, $padding: $large-spacing) {
+    background-color: $background-color;
+    border: 1px solid $background-color;
+    border-radius: 8px;
+    padding: $padding;
+}
