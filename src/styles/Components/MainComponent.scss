@@ -14,25 +14,6 @@
         color: #000;
     }
 
-    &__header {
-        height: 10vh;
-        padding: 3rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .main__title {
-            font-size: 1.5em;
-        }
-
-        .main__theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.5em;
-        }
-    }
-
     &__content {
         padding: 0 1rem 1rem;
         height: 85vh;
@@ -55,110 +36,6 @@
         margin: 0 auto;
         max-width: 1200px;
         border-radius: 1rem 1rem 0 0;
-    }
-
-    // &__info {
-    //     display: flex;
-    //     border-radius: 1rem;
-    //     padding: 1rem 1rem 1.5rem;
-    //     gap: 1rem;
-
-    //     &__left {
-    //         svg {
-    //             font-size: 2rem;
-    //         }
-    //     }
-
-    //     &__right {
-    //         line-height: 1.5rem;
-
-    //         h2 {
-    //             margin: .0rem 0 1rem;
-    //         }
-    //     }
-    // }
-
-    // &__entry {
-    //     display: flex;
-    //     padding: 1rem;
-    //     width: 100%;
-    //     margin: 0 auto;
-    //     justify-content: center;
-    // }
-
-    // &__action {
-    //     display: flex;
-    //     gap: .5rem;
-    //     width: 100%;
-    //     justify-content: end;
-    //     padding: 0 1rem;
-    // }
-
-    // &__input {
-    //     padding: 10px;
-    //     border: none;
-    //     background-color: unset;
-    //     width: calc(30% - 1rem);
-    //     color: white;
-    //     text-align: center;
-
-    //     &::placeholder {
-    //         color: white;
-    //         opacity: 1;
-    //     }
-    // }
-
-    // &__button {
-    //     padding: 10px 15px;
-    //     background-color: #007bff;
-    //     color: #fff;
-    //     border: none;
-    //     border-radius: 5px;
-    //     cursor: pointer;
-    //     flex-grow: 1;
-
-    //     &:hover {
-    //         background-color: #0056b3;
-    //     }
-    // }
-
-    // &__recommendations {
-    //     display: flex;
-    //     width: 100%;
-    //     gap: 10px;
-
-    //     .main__recommendation-button {
-    //         padding: 5px 10px;
-    //         background-color: #f0f0f0;
-    //         border: none;
-    //         border-radius: 5px;
-    //         cursor: pointer;
-    //         font-size: 0.9em;
-
-    //         &:hover {
-    //             background-color: #e0e0e0;
-    //         }
-    //     }
-    // }
-
-    // &__loading {}
-
-    &__results {
-        max-width: 600px;
-        width: 100%;
-        text-align: left;
-        margin: 1rem auto;
-        line-height: 1.5rem;
-        display: none;
-        padding: 2rem 0 0;
-        border-top: 1px solid white;
-        animation: all 2s;
-    }
-
-    &__footer {
-        text-align: center;
-        font-size: 0.8em;
-        margin-top: 20px;
     }
 
     &__aside {

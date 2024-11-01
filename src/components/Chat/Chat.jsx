@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import OpenAI from "openai";
-import { CiCircleRemove, CiPlane, CiCircleChevDown, CiFileOn  , CiCircleInfo } from "react-icons/ci";
+import { CiCircleRemove, CiPlane, CiCircleChevDown, CiFileOn, CiCircleInfo } from "react-icons/ci";
 import { FaSpinner } from 'react-icons/fa';
 import { CiSun } from 'react-icons/ci';
 
@@ -64,7 +64,11 @@ function Chat() {
     const handleSubmit = () => {
         if (!userMessage) return;
 
-        const newUserMessage = { text: userMessage, from: 'user' };
+        const newUserMessage = {
+            text: userMessage,
+            from: 'user',
+            timestamp: new Date()
+        };
         setMessages(prev => [...prev, newUserMessage]);
         setDisplayedMessages(prev => [...prev, newUserMessage]);
 
@@ -80,7 +84,7 @@ function Chat() {
                     Grupo foco: ${messages[messages.length - 1].text}
                     `;
 
-                    setDisplayedMessages(prev => [...prev, { text: "Aguarde...", from: 'bot' }]);
+                    setDisplayedMessages(prev => [...prev, { text: "Aguarde...", from: 'bot', timestamp: new Date() }]);
                     fetchResponse(startupInput);
                 }, 500);
             }
@@ -95,12 +99,12 @@ function Chat() {
         setUserMessage('');
         setCurrentQuestionIndex(0);
         if (startupMode) {
-            const welcomeMessage = { text: "Bem-vindo ao modo Startup! Vamos começar com algumas perguntas.", from: 'bot' };
+            const welcomeMessage = { text: "Bem-vindo ao modo Startup! Vamos começar com algumas perguntas.", from: 'bot', timestamp: new Date() };
             const firstQuestionMessage = { text: questions[0], from: 'bot' };
             setDisplayedMessages([welcomeMessage, firstQuestionMessage]);
         } else {
-            const welcomeMessage = { text: "Bem-vindo ao modo Normal! Use o ChatGPT da sua forma.", from: 'bot' };
-            setDisplayedMessages([welcomeMessage ]);
+            const welcomeMessage = { text: "Bem-vindo ao modo Normal! Use o ChatGPT da sua forma.", from: 'bot', timestamp: new Date() };
+            setDisplayedMessages([welcomeMessage]);
 
         }
     };
@@ -129,15 +133,26 @@ function Chat() {
             });
     };
 
+    const formatTimestamp = (date) => {
+        return date.toLocaleString('pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        });
+    };
+
     useEffect(() => {
         if (startupMode) {
             if (questionIndex === 0) {
-                const welcomeMessage = { text: "Bem-vindo ao modo Startup! Vamos começar com algumas perguntas.", from: 'bot' };
+                const welcomeMessage = { text: "Bem-vindo ao modo Startup! Vamos começar com algumas perguntas.", from: 'bot', timestamp: new Date() };
                 setMessages(prev => [...prev, welcomeMessage]);
                 displayMessages(welcomeMessage);
             }
             if (questionIndex < questions.length) {
-                const questionMessage = { text: questions[questionIndex], from: 'bot' };
+                const questionMessage = { text: questions[questionIndex], from: 'bot', timestamp: new Date() };
                 setMessages(prev => [...prev, questionMessage]);
                 displayMessages(questionMessage);
             }
@@ -175,9 +190,12 @@ function Chat() {
                     <div key={index} className={`chat__message chat__message--${msg.from}`}>
                         <div>
                             <ReactMarkdown>{msg.text}</ReactMarkdown>
-                            <span>&gt; {msg.from === "user" ? "by Me" : "by We AI"}</span>
+                            <span>
+                                &gt; {msg.from === "user" ? "by Me" : "by We AI"} -
+                                {msg.timestamp && formatTimestamp(msg.timestamp)}
+                            </span>
                         </div>
-                        <button className="chat__copy" onClick={() => copyToClipboard(msg.text)}><CiFileOn   /></button>
+                        <button className="chat__copy" onClick={() => copyToClipboard(msg.text)}><CiFileOn /></button>
                     </div>
                 ))}
                 <div ref={messagesEndRef} />
