@@ -14,7 +14,8 @@ function Header() {
     const { isMenuOpen, toggleMenu } = useTheme();
 
     return (
-        <header className={`header ${darkTheme ? 'main--ddark' : 'main--llight'}`}>
+        // <header className={`header ${darkTheme ? 'main--dark' : 'main--light'}`}>
+        <header className={`header`}>
             <div className="header__wrapper">
                 <button className="header__button" onClick={toggleMenu}>
                     <CiMenuFries  />

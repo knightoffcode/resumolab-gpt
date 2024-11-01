@@ -73,8 +73,13 @@
             right: 5.5rem;
             font-size: 1.5rem;
             cursor: pointer;
+
+            @media (max-width: 768px) {
+                top: -2rem;
+                right: 1.5rem;
+            }
         }
-        
+
         &::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -91,6 +96,10 @@
 
         &::-webkit-scrollbar-thumb:hover {
             background: #555;
+        }
+
+        @media (max-width: 768px) {
+            padding: 1rem;
         }
     }
 
@@ -120,13 +129,13 @@
         }
 
         p {
-            background-color: #e542d237;
+            background: linear-gradient(45deg, #cbdafa, #eaa7ff);
             margin: .5rem 0;
             display: inline-flex;
             flex-direction: column;
             padding: 1rem;
             border-radius: 1rem;
-
+            min-width: 100px;
         }
     }
 
@@ -144,12 +153,13 @@
         }
 
         p {
-            background-color: #32cc87;
+            background: linear-gradient(to right, #cbdafa, #ffb7ec, #faf2f2);
             margin: .5rem 0;
             padding: 1rem;
             border-radius: 1rem;
             display: inline-flex;
             flex-direction: column;
+            min-width: 100px;
         }
     }
 
@@ -159,6 +169,11 @@
         position: relative;
         gap: 1rem;
         display: inline-flex;
+
+        @media (max-width: 768px) {
+            padding: 1rem;
+            gap: unset;
+        }
     }
 
     &__input {
