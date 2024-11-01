@@ -1,7 +1,7 @@
 # Innovate Hub
 
 ## Descrição
-O **ChatGPT Startup Chat** é uma aplicação interativa de chat que permite aos usuários conversar de forma envolvente com um modelo de linguagem avançado. Com uma interface intuitiva e recursos inovadores, o app não só proporciona uma experiência de chat rica e dinâmica, mas também conta com um modo exclusivo chamado **Modo Startup**. Este modo, acessível pelo menu lateral, coleta informações específicas do usuário para gerar ideias criativas e personalizadas de projetos para startups. A combinação perfeita de inteligência artificial e empreendedorismo!
+O **Innovate Hub** é uma aplicação interativa de chat que permite aos usuários conversar de forma envolvente. Com uma interface intuitiva e recursos inovadores, o app não só proporciona uma experiência de chat rica e dinâmica, mas também conta com um modo exclusivo chamado **Modo Startup**. Este modo, acessível pelo menu lateral, coleta informações específicas do usuário para gerar ideias criativas e personalizadas de projetos para startups. A combinação perfeita de inteligência artificial e empreendedorismo!
 
 ## Funcionalidades
 - **Chat interativo**: Converse com o ChatGPT sobre diversos temas e explore respostas intrigantes.
@@ -17,10 +17,10 @@ O **ChatGPT Startup Chat** é uma aplicação interativa de chat que permite aos
 ### Passo a passo para instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/chatgpt-startup-chat.git
+   git clone https://github.com/knightoffcode/resumolab-gpt.git
 2. Navegue até o repositório:
    ```bash
-   cd chatgpt-startup-chat
+   cd resumolab-gpt
 3. Instale as dependencias:
    ```bash
    npm install
