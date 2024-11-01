@@ -127,7 +127,7 @@
             text-align: end;
         }
 
-        p {
+        p, ul {
             background: linear-gradient(45deg, #cbdafa, #eaa7ff);
             margin: .5rem 0;
             display: inline-flex;
@@ -158,6 +158,14 @@
             border-radius: 1rem;
             display: inline-flex;
             flex-direction: column;
+            min-width: 100px;
+        }
+
+        ul, ol {
+            background: linear-gradient(to right, #cbdafa, #ffb7ec, #faf2f2);
+            margin: .5rem 0;
+            padding: 1rem;
+            border-radius: 1rem;
             min-width: 100px;
         }
     }
