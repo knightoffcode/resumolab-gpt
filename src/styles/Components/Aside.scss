@@ -1,0 +1,53 @@
+@import '../Variables';
+
+.aside {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &--main {
+        margin-bottom: auto;
+    }
+
+    &--secundary {
+        margin-top: auto;
+    }
+
+    &__item {
+        padding: 10px 15px;
+        position: relative;
+        border-radius: 1rem;
+
+        &--blocked {
+
+            a {
+                color: gray;
+                cursor: not-allowed;
+            }
+
+            span {
+                filter: blur(5px);
+            }
+        }
+
+        &:hover {
+            background-color: #ececec;
+        }
+    }
+
+    &__anchor {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+    &__icon {
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+}

@@ -9,7 +9,7 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
     const [darkTheme, setDarkTheme] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const [startupMode, setStartupMode] = useState(false);
 
     const toggleTheme = () => {
         setDarkTheme(prevTheme => !prevTheme);
@@ -19,8 +19,12 @@ export const ThemeProvider = ({ children }) => {
         setIsMenuOpen(prevMenuState => !prevMenuState);
     };
 
+    const toggleStartupMode = () => {
+        setStartupMode(prevStartupModeState => !prevStartupModeState);
+    };
+
     return (
-        <ThemeContext.Provider value={{ darkTheme, toggleTheme, isMenuOpen, toggleMenu  }}>
+        <ThemeContext.Provider value={{ darkTheme, toggleTheme, isMenuOpen, toggleMenu, startupMode, toggleStartupMode }}>
             {children}
         </ThemeContext.Provider>
     );
