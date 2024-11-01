@@ -1,8 +1,13 @@
 import React from 'react';
 
 /**
- *
- * @returns
+ * Footer Component
+ * 
+ * This component represents the footer of the application, displaying
+ * copyright information. It serves as a simple branding and legal
+ * notice for the application.
+ * 
+ * @returns {JSX.Element} The JSX element representing the footer.
  */
 
 function Footer() {

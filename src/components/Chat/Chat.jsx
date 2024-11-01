@@ -1,10 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import OpenAI from "openai";
-import { CiCircleRemove, CiPlane, CiCircleChevDown, CiFileOn, CiCircleInfo } from "react-icons/ci";
+import { CiCircleRemove, CiPlane, CiCircleChevDown, CiFileOn, CiPaperplane } from "react-icons/ci";
 import { FaSpinner } from 'react-icons/fa';
-import { CiSun } from 'react-icons/ci';
-
-import { CiPaperplane } from "react-icons/ci";
 import { useTheme } from '../../ThemeContext';
 import ReactMarkdown from 'react-markdown';
 
@@ -12,6 +9,23 @@ const openai = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true
 });
+
+/**
+ * Chat Component
+ * 
+ * This component manages the chat interface of the application, allowing
+ * users to send messages and interact with the OpenAI ChatGPT model.
+ * 
+ * Key functionalities:
+ * - Sending user messages and receiving bot responses.
+ * - Activating the "Startup Mode," which asks specific questions and generates
+ *   project ideas based on the user's answers.
+ * - Storing messages in state and displaying them in a readable format.
+ * - Copying messages to the clipboard.
+ * - Automatically scrolling to show the most recent messages.
+ * 
+ * @returns {JSX.Element} The JSX element representing the chat interface.
+ */
 
 function Chat() {
     const [userMessage, setUserMessage] = useState('');
@@ -167,7 +181,7 @@ function Chat() {
     }, [displayedMessages]);
 
     return (
-        <div className="chat">
+        <div className="chat" id="chat">
             <div className="chat__actions">
                 <button className="chat__action" onClick={handleClearMessages}>
                     <CiCircleRemove />
