@@ -48,13 +48,13 @@ Este projeto utiliza as seguintes bibliotecas:
 - react-router-dom
 - sass
 
-Uso
+### Uso
 Após iniciar a aplicação, você será recebido com uma interface de chat. Explore as funcionalidades e ative o Modo Startup através do menu lateral para começar a coletar suas ideias de projetos!
 
-FAQ
-O que é o Modo Startup? O Modo Startup é um recurso que coleta informações sobre o usuário para sugerir ideias de projetos personalizados.
+### FAQ
+- O que é o Modo Startup? O Modo Startup é um recurso que coleta informações sobre o usuário para sugerir ideias de projetos personalizados.
 
-Como posso contribuir? Fique à vontade para abrir um pull request ou relatar problemas na seção de issues do repositório.
+- Como posso contribuir? Fique à vontade para abrir um pull request ou relatar problemas na seção de issues do repositório.
 
 ### Suporte
 Para dúvidas ou suporte, entre em contato através do email: contateisaias@proton.me.
