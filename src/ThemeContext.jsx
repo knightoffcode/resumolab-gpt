@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
-
+import React, { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const useTheme = () => {
@@ -22,6 +21,21 @@ export const ThemeProvider = ({ children }) => {
     const toggleStartupMode = () => {
         setStartupMode(prevStartupModeState => !prevStartupModeState);
     };
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        setIsMenuOpen(mediaQuery.matches);
+
+        const handleResize = (event) => {
+            setIsMenuOpen(event.matches);
+        };
+
+        mediaQuery.addListener(handleResize);
+
+        return () => {
+            mediaQuery.removeListener(handleResize);
+        };
+    }, []);
 
     return (
         <ThemeContext.Provider value={{ darkTheme, toggleTheme, isMenuOpen, toggleMenu, startupMode, toggleStartupMode }}>
